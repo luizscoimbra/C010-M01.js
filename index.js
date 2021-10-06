@@ -1,32 +1,90 @@
-let cinema1 = {
-  nome: 'O primeiro Homem',
-  duracao: 141,
-  ano: 2018,
-  diretor: 'Damien Chazelle',
-  atores: ['Neil Armstrong'],
-}
-let cinema2 = {
-  nome: 'Infinito',
-  duracao: 106,
-  ano: 2021,
-  diretor: 'Antoine Fuqua',
-  atores: ['Todd Stein, Eric Maikranz']
-}
-
-console.log(cinema1);
 console.log();
-console.log(cinema2);
+console.log("#############################");
+console.log("#############################");
+console.log("####### D I C E  GAME #######");
+console.log("#############################");
+console.log("#############################");
 console.log();
 
-cinema1.filme = function(){
-  return `O filme ${this.nome}, com duração de ${this.duracao} minutos, lançado em ${this.ano}, com direção de ${this.diretor}, tendo com ator principal ${this.atores} é uma boa pedida para o fim de semana!`
-}
+let rodadas = prompt("DIGITE O NUMERO DE RODADAS: ");
+let pergunta = prompt("DESEJA INICIAR O JOGO? [SIM] ou [NAO] ");
 
-console.log(cinema1.filme());
+console.log();  
+console.log("VOCE ESCOLHEU JOGAR "+rodadas+" VEZES!");
 console.log();
 
-cinema2.filme = function(){
-  return `O filme ${this.nome}, com duração de ${this.duracao} minutos, lançado em ${this.ano}, com direção de ${this.diretor}, tendo com ator principal ${this.atores} é uma boa pedida para o fim de semana!`
-}
+//Armazena quantidade vitorias dos jogadores.
 
-console.log(cinema2.filme());
+var contJogador1 = 0;
+var contJogador2 = 0;
+
+//Laço de repetição 
+
+for (let i = 0; pergunta == "SIM" || pergunta == "sim"; i++)
+{
+for (let i = 1; i <= rodadas; i++)
+{
+
+//Função Math.random realiza sortei das opções de foram aleatória.
+const player1 = Math.round(Math.random() * 6) + 1;
+const player2 = Math.round(Math.random() * 6) + 1;
+
+//Inicia lógica do jogo.
+//Primeira possibilidade.
+
+if (player1 === player2) 
+    {
+    console.log('Deu empate!');
+    console.log("Dado Player 1 caiu com ["+player1+"]pontos.");
+    console.log("Dado Player 2 caiu com ["+player2+"]pontos.");
+    console.log();
+    
+    }
+    else if (player1 < player2) 
+    {
+    console.log('Jogador 2 ganhou!');
+    console.log("Dado Player 1 caiu com ["+player1+"]pontos.");
+    console.log("Dado Player 2 caiu com ["+player2+"]pontos.");
+    console.log();
+    contJogador2++;
+    }
+    else if (player1 > player2) {
+    console.log('Jogador 1 ganhou!');
+    console.log("Dado Player 1 caiu com ["+player1+"]pontos.");
+    console.log("Dado Player 2 caiu com ["+player2+"]pontos.");
+    console.log();
+    contJogador1++;
+    }
+
+  }
+console.log("Jogador 1 venceu ["+contJogador1+"] rodadas!");
+console.log("Jogador 2 venceu ["+contJogador2+"] rodadas!");
+console.log();
+if (contJogador1 === contJogador2) 
+    {
+    console.log('Player 1 e Player 2 empataram!');
+    console.log();
+    
+    }
+    else if (contJogador1 < contJogador2) 
+    {
+    console.log('Jogador 2 ganhou!');
+    console.log();
+    contJogador2++;
+    }
+    else if (contJogador1 > contJogador2) {
+    console.log('Jogador 1 ganhou!');
+    console.log();
+    contJogador1++;
+    }
+
+pergunta = prompt("DESEJA CONTNUAR O JOGO? [SIM] ou [NÃO] ");
+console.log();
+console.log();
+}
+console.log();
+console.log("#################################");
+console.log("# ALUNO: LUIZ ALBERTO COIMBRA   #");
+console.log("# TURMA: C010 MOD:001           #");
+console.log("# MODULO: LÓGICA DE PROGRAMAÇÃO #");
+console.log("#################################");
