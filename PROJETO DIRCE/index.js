@@ -64,7 +64,7 @@ if (player1 === player2)
     console.log();
     contJogador1++;
     }
-
+    
   }
     console.log("--------------------------------------------");
     console.log("--------------------------------------------");
@@ -73,6 +73,7 @@ if (player1 === player2)
     console.log("--------------------------------------------");
     console.log("--------------------------------------------");
     console.log();
+
 if (contJogador1 === contJogador2) 
     {
     console.log('Player 1 e Player 2 empataram!');
