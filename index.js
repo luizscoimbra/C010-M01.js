@@ -1,103 +1,109 @@
-console.log();
-console.log("#############################");
-console.log("#############################");
-console.log("####### D I C E  GAME #######");
-console.log("#############################");
-console.log("#############################");
-console.log();
+var pergunta = prompt("Deseja iniciar a votação? ");
 
-let rodadas = prompt("Digite o [NÚMERO] de rodadas: ");
-for (let i = 1; i <= rodadas; i++)
+candidato1 = 0;
+candidato2 = 0;
+candidato3 = 0;
+votoNulo = 0;
+votoBranco = 0;
+
+
+
+for (var i = 0; pergunta == "SIM" || pergunta == "sim"; i++)
 {
+  //Calcula idade com base no ano atual - ano de nascimento.
+
+var ano_informado = prompt("Digite o ano do seu nascimento: ");
 console.log();
-let jogadores = prompt("Digite o [NOME] dos jogadores: ");
+var ano_atual = new Date().getFullYear();
+var idade = ano_atual - ano_informado;
+
+
+//Vefiricação da obrigatoriedade do voto.
+
+if (idade < 16)
+{
+   console.log("Voto NEGADO! Você tem apenas "+idade+" anos!");
+   console.log();
+   pergunta = prompt("Deseja continuar a votação? ");
 }
-console.log();
-let pergunta = prompt("Deseja iniciar o jogo? [SIM] ou [NAO] ");
+  else if (idade >= 16 && idade <18)
+  {
+    console.log("Voto OPCIONAL! Você tem apenas "+idade+" anos!");
+    opcao = prompt("Deseja votar mesmo assim? ");
+    if (opcao == "sim" || opcao == "SIM"){
+    var voto = +prompt( `Digite o número do seu candidato:     
+     1 = Candidato 1 
+     2 = Candidato 2
+     3 = Candidato 3
+     4 = Voto Nulo 
+     5 = Voto em Branco`);  
+     console.log();
+     console.log("Você escolheu candidado "+voto+"."); 
+     console.log();
+     
+     if (voto == 1){
+        candidato1++;
+      }
 
-console.log();  
-console.log("VOCE ESCOLHEU JOGAR "+rodadas+" VEZES!");
-console.log();
+      if (voto == 2){
+        candidato2++;
+      }
 
-//Armazena quantidade vitorias dos jogadores.
+      if (voto == 3){
+        candidato3++;
+      }
 
-var contJogador1 = 0;
-var contJogador2 = 0;
+      if (voto == 4){
+        votoNulo++;
+      }
 
-//Laço de repetição 
-
-for (let i = 0; pergunta == "SIM" || pergunta == "sim"; i++)
-{
-for (let i = 1; i <= rodadas; i++)
-{
-
-//Função Math.random realiza sortei das opções de foram aleatória.
-const player1 = Math.round(Math.random() * 6) + 1;
-const player2 = Math.round(Math.random() * 6) + 1;
-
-//Inicia lógica do jogo.
-//Primeira possibilidade.
-
-if (player1 === player2) 
-    {
-    console.log('>>>>>>>>>>>> Deu empate! <<<<<<<<<<<<<<<<<<<');
-    console.log("............................................")
-    console.log("Dado Player 1 caiu com ["+player1+"]pontos.");
-    console.log("Dado Player 2 caiu com ["+player2+"]pontos.");
-    console.log();
-    
+      if (voto == 5){
+        votoBranco++;
+      }
     }
-    else if (player1 < player2) 
-    {
-    console.log('>>>>>>>>>> Jogador 2 ganhou! <<<<<<<<<<<<<<');
-    console.log("............................................")
-    console.log("Dado Player 1 caiu com ["+player1+"]pontos.");
-    console.log("Dado Player 2 caiu com ["+player2+"]pontos.");
-    console.log();
-    contJogador2++;
-    }
-    else if (player1 > player2) {
-    console.log('>>>>>>>>>> Jogador 1 ganhou! <<<<<<<<<<<<<<');
-    console.log("............................................");
-    console.log("Dado Player 1 caiu com ["+player1+"]pontos.");
-    console.log("Dado Player 2 caiu com ["+player2+"]pontos.");
-    console.log();
-    contJogador1++;
-    }
-
   }
-    console.log("--------------------------------------------");
-    console.log("--------------------------------------------");
-    console.log("Jogador 1 venceu ["+contJogador1+"] rodadas!");
-    console.log("Jogador 2 venceu ["+contJogador2+"] rodadas!");
-    console.log("--------------------------------------------");
-    console.log("--------------------------------------------");
-    console.log();
-if (contJogador1 === contJogador2) 
+  else if (idade >= 18)
     {
-    console.log('Player 1 e Player 2 empataram!');
+    console.log("Voto OBRIGATÓRIO! Você tem "+idade+" anos!");
     console.log();
-    
-    }
-    else if (contJogador1 < contJogador2) 
-    {
-    console.log('Jogador 2 ganhou!');
-    console.log();
-    contJogador2++;
-    }
-    else if (contJogador1 > contJogador2) {
-    console.log('Jogador 1 ganhou!');
-    console.log();
-    contJogador1++;
-    }
+     var voto = +prompt( `Digite o número do seu candidato:     
+     1 = Candidato 1 
+     2 = Candidato 2
+     3 = Candidato 3
+     4 = Voto Nulo 
+     5 = Voto em Branco`);  
+     console.log();
+     console.log("Você escolheu candidado "+voto+"."); 
+     console.log();
 
-pergunta = prompt("DESEJA CONTNUAR O JOGO? [SIM] ou [NÃO] ");
-console.log();
-console.log();
+      if (voto == 1){
+        candidato1++;
+      }
+
+      if (voto == 2){
+        candidato2++;
+      }
+
+      if (voto == 3){
+        candidato3++;
+      }
+
+      if (voto == 4){
+        votoNulo++;
+      }
+
+      if (voto == 5){
+        votoBranco++;
+      }
+}       
+    
+pergunta = prompt("Deseja continuar a votação? ");
+
 }
 console.log();
-console.log("#################################");
-console.log("# ALUNO: LUIZ ALBERTO COIMBRA   #");
-console.log("# TURMA: C010 MOD:001           #");
-console.log("# MODULO: LÓGICA DE PROGRAMAÇÃO #");
-console.log("#################################");
+console.log("Total votos candidato 1:... ["+candidato1+"].");
+console.log("Total votos candidato 2:... ["+candidato2+"].");
+console.log("Total votos candidato 3:... ["+candidato3+"].");
+console.log("Total votos nulos:..........["+votoNulo+"].");
+console.log("Total votos brancos:........["+votoBranco+"].");
+console.log();
