@@ -1,12 +1,14 @@
 var pergunta = prompt("Deseja iniciar a votação? ");
 
-candidato1 = 0;
-candidato2 = 0;
-candidato3 = 0;
-votoNulo = 0;
-votoBranco = 0;
+//Variáveis que armazenão os votos registrados.
 
+var candidato1 = 0;
+var candidato2 = 0;
+var candidato3 = 0;
+var votoNulo = 0;
+var votoBranco = 0;
 
+//Laçõ de repetição
 
 for (var i = 0; pergunta == "SIM" || pergunta == "sim"; i++)
 {
@@ -32,13 +34,13 @@ if (idade < 16)
     opcao = prompt("Deseja votar mesmo assim? ");
     if (opcao == "sim" || opcao == "SIM"){
     var voto = +prompt( `Digite o número do seu candidato:     
-     1 = Candidato 1 
-     2 = Candidato 2
-     3 = Candidato 3
-     4 = Voto Nulo 
-     5 = Voto em Branco`);  
+     [1] = Candidato 1 
+     [2] = Candidato 2
+     [3] = Candidato 3
+     [4] = Voto Nulo 
+     [5] = Voto em Branco`);  
      console.log();
-     console.log("Você escolheu candidado "+voto+"."); 
+     console.log("Você escolheu Candidado "+voto+"."); 
      console.log();
      
      if (voto == 1){
@@ -67,11 +69,11 @@ if (idade < 16)
     console.log("Voto OBRIGATÓRIO! Você tem "+idade+" anos!");
     console.log();
      var voto = +prompt( `Digite o número do seu candidato:     
-     1 = Candidato 1 
-     2 = Candidato 2
-     3 = Candidato 3
-     4 = Voto Nulo 
-     5 = Voto em Branco`);  
+     [1] = Candidato 1 
+     [2] = Candidato 2
+     [3] = Candidato 3
+     [4] = Voto Nulo 
+     [5] = Voto em Branco`);  
      console.log();
      console.log("Você escolheu candidado "+voto+"."); 
      console.log();
@@ -100,10 +102,13 @@ if (idade < 16)
 pergunta = prompt("Deseja continuar a votação? ");
 
 }
+
 console.log();
 console.log("Total votos candidato 1:... ["+candidato1+"].");
 console.log("Total votos candidato 2:... ["+candidato2+"].");
 console.log("Total votos candidato 3:... ["+candidato3+"].");
+console.log();
 console.log("Total votos nulos:..........["+votoNulo+"].");
 console.log("Total votos brancos:........["+votoBranco+"].");
 console.log();
+
