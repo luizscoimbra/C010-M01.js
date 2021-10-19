@@ -12,14 +12,28 @@
       {
         "id": "3873d087-e37b-4e9a-81cf-0230f421b525",
         "line": 1,
-        "version": 19320,
+        "version": 26144,
         "index": 0
       },
       {
         "id": "01f0c18b-3721-4f3d-bf99-3ebeb5ea8fb0",
         "line": 1,
-        "version": 19320,
+        "version": 26144,
         "index": 0
+      },
+      {
+        "id": "150649fe-e258-45f1-9a7e-e5f651741d24",
+        "line": 1,
+        "version": 26144,
+        "index": 0
+      }
+    ],
+    "index2.js": [
+      {
+        "id": "8cc904df-e70c-4c94-abf4-654a7aa92a2a",
+        "line": 10,
+        "version": 0,
+        "index": 210
       }
     ]
   }
